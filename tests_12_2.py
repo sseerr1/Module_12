@@ -5,8 +5,8 @@ from runner_and_tournament import Runner, Tournament
 class TournamentTest(unittest.TestCase):
 
     @classmethod
-    def setUpClass(self):
-        self.all_results = {}
+    def setUpClass(cls):
+        cls.all_results = {}
 
     def setUp(self):
         self.runner_1 = Runner("Усэйн", 10)
@@ -14,8 +14,8 @@ class TournamentTest(unittest.TestCase):
         self.runner_3 = Runner("Ник", 3)
 
     @classmethod
-    def tearDownClass(self):
-        for result in self.all_results.values():
+    def tearDownClass(cls):
+        for result in cls.all_results.values():
             formatted_result = {key: str(value) for key, value in result.items()}
             print(formatted_result)
 
